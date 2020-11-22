@@ -25,6 +25,6 @@
 #define STATIC            static
 
 /* This is used to define the abstraction of compiler inline Assembly  */
-#define ASM  asm
+#define ASM  __asm
 
 #endif /* COMPILER_H_ */
