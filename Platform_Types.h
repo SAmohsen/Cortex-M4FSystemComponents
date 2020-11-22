@@ -43,6 +43,7 @@
 #define CPU_BIT_ORDER       LSB_FIRST
 #define CPU_BYTE_ORDER      LOW_BYTE_FIRST
 
+#define PLATFORM_WORD_LENGTH 32 
 /*
  * Boolean Values
  */
