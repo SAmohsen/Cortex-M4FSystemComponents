@@ -43,14 +43,13 @@
 /*Enter Sleep Mode And Wait For An Event,interrupt To Wake Up*/
 #define CPU_WaitForEvent()  ASM("WFE");
 
-
+/*SuperVisor Call Exception Used To Make Thread Mode Access Privilege Software*/
+#define CPU_SwitchToPrivileged()   ASM(" SVC 2");
 
 /**********************************************************************************************************************
  *                                         GLOBAL FUNCTION PROTOTYPES
  *********************************************************************************************************************/
 void CPU_EnterCritical(void);
 void CPU_ExitCritical(void) ;
-
-
 
 #endif /* CPU_H_ */

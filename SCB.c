@@ -13,6 +13,30 @@
 #include "SCB.h"
 #include "SCB_map.h"
 
+
+/******************************************************************************
+* \Syntax          :void SVC_Handler(void)
+* \Description     : SuperVisor Call Exception Used To Make Thread Mode Access Privilege Software
+*                                                                             
+* \Sync\Async      : Synchronous                                               
+* \Reentrancy      : Non Reentrant                                             
+* \Parameters (in) : parameterName   Parameter Describtion                     
+* \Parameters (out): None                                                        
+* \Return value:   : None                                 
+*******************************************************************************/
+void SVC_Handler(void){
+	
+/*
+ *ARM Compiler toolchain v5.02 for µVision
+ */
+	uint32 privilegedModeRegMask = 0xFFFFFFFE; 
+	uint32  controlReg ; 
+  ASM("MRS controlReg ,CONTROL") ; 
+	ASM("AND controlReg, privilegedModeRegMask ") ; 
+  ASM("MSR CONTROL , controlReg") ; 
+	
+}
+
 /******************************************************************************
 * \Syntax          :void SCB_SysExceptionEnable(Scb_SysExceptionType exception) 
 * \Description     : Enable EXception                               
